@@ -22,7 +22,7 @@ public class Sorts {
     temp = ary[least];
     ary[least] = ary[i];
     ary[i] = temp;
-    System.out.println(Arrays.toString(ary));
+    //System.out.println(Arrays.toString(ary));
   }
 }
 
@@ -32,7 +32,9 @@ public class Sorts {
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionSort(ary1);
+    System.out.println("Sorted: " + Arrays.toString(ary1));
     System.out.println("This is your original: " + Arrays.toString(ary2));
     selectionSort(ary2);
+    System.out.println("Sorted: " + Arrays.toString(ary2));
   }
 }
