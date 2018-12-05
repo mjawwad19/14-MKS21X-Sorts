@@ -22,18 +22,14 @@ public class Sorts {
     temp = ary[least];
     ary[least] = ary[i];
     ary[i] = temp;
+    System.out.println(Arrays.toString(ary));
   }
 }
 
   public static void main(String[] args) {
-    int[] ary1 =  new int[10];
-    Random randgen =  new Random();
-    for (int i = 0; i < 10; i++) {
-      ary1[i] = randgen.nextInt(30);
-    }
+    int[] ary1 =  {7, 5, 4, 2};
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionsort(ary1);
-    System.out.println("This is your sorted: " + Arrays.toString(ary1)); //now modified
   }
 }
