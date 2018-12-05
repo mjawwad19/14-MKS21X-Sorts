@@ -1,5 +1,13 @@
 import java.util.*;
 import java.io.*;
+/*
+*@param ary is any array to be sorted.
+Directions:
+choose the smallest put it into ary[0]
+choose the next smallest put it into ary[1]  (you can ignore the slots before the current position)
+choose the next smallest put it into ary[2]  (you can ignore the slots before the current position)
+...
+*/
 public class selectionSort {
   public static void selectionsort(int [] ary) {
     int least,temp;
