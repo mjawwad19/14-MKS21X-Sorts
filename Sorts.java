@@ -9,7 +9,7 @@ choose the next smallest put it into ary[2]  (you can ignore the slots before th
 ...
 */
 public class Sorts {
-  public static void selectionsort(int [] ary) {
+  public static void selectionSort(int [] ary) {
     int least,temp;
     //advised by others that I should not use Math.min :/
     for (int i = 0; i < ary.length; i++) {
@@ -28,8 +28,11 @@ public class Sorts {
 
   public static void main(String[] args) {
     int[] ary1 =  {7, 5, 4, 2};
+    int[] ary2 = {5,1,12,-5,16,2,12,14};
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
-    selectionsort(ary1);
+    selectionSort(ary1);
+    System.out.println("This is your original: " + Arrays.toString(ary2));
+    selectionSort(ary2);
   }
 }
