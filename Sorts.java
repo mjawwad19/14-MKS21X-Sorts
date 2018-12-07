@@ -50,16 +50,16 @@ public class Sorts {
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionSort(ary1);
-    System.out.println("Sorted: " + Arrays.toString(ary1));
+    System.out.println("Selection Sorted: " + Arrays.toString(ary1));
     System.out.println("This is your original: " + Arrays.toString(ary2));
     selectionSort(ary2);
-    System.out.println("Sorted: " + Arrays.toString(ary2));
+    System.out.println("Selection Sorted: " + Arrays.toString(ary2));
     System.out.println("This is your original: " + Arrays.toString(ary3));
     bubbleSort(ary3);
-    System.out.println("Sorted: " + Arrays.toString(ary3));
+    System.out.println("Bubble Sorted: " + Arrays.toString(ary3));
     System.out.println("This is your original: " + Arrays.toString(ary4));
     bubbleSort(ary4);
-    System.out.println("Sorted: " + Arrays.toString(ary4));
+    System.out.println("Bubble Sorted: " + Arrays.toString(ary4));
 
   }
 }
