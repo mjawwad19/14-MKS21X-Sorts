@@ -32,7 +32,7 @@ public class Sorts {
       int end = ary.length -1;
       least = i;
       for (int j = 0; j < end; j++) {
-        if (ary[j] < ary[least]) {
+        if (ary[j] > ary[least]) {
           temp = ary[j];
           ary[j] = ary[least];
           ary[least] = temp;
