@@ -26,9 +26,27 @@ public class Sorts {
   }
 }
 
+  public static void bubbleSort(int [] ary) {
+    int least, temp;
+    for (int i = 0; i < ary.length; i++) {
+      int end = ary.length -1;
+      least = i;
+      for (int j = 0; j < end; j++) {
+        if (ary[j] < ary[least]) {
+          temp = ary[j];
+          ary[j] = ary[least];
+          ary[least] = temp;
+        }
+      }
+      end--;
+    }
+  }
+
   public static void main(String[] args) {
     int[] ary1 =  {7, 5, 4, 2};
     int[] ary2 = {5,1,12,-5,16,2,12,14};
+    int[] ary3 = {5,1,12,-5,16};
+    int[] ary4 = {2,3,4,5,1};
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionSort(ary1);
@@ -36,5 +54,12 @@ public class Sorts {
     System.out.println("This is your original: " + Arrays.toString(ary2));
     selectionSort(ary2);
     System.out.println("Sorted: " + Arrays.toString(ary2));
+    System.out.println("This is your original: " + Arrays.toString(ary3));
+    bubbleSort(ary3);
+    System.out.println("Sorted: " + Arrays.toString(ary3));
+    System.out.println("This is your original: " + Arrays.toString(ary4));
+    bubbleSort(ary4);
+    System.out.println("Sorted: " + Arrays.toString(ary4));
+
   }
 }
