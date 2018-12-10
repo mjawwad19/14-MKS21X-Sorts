@@ -46,11 +46,11 @@ public class Sorts {
 
   public static void insertionSort(int [] ary) {
     int temp, curr;
-    boolean placed = false;
     for (int i = 1; i < ary.length; i++){
      if (ary[i] < ary[i - 1]){
        temp = ary[i];
        curr = i - 1;
+       boolean placed = false;
        while (!placed){
          if (curr < 0 || ary[curr] < temp){
            ary[curr + 1] = temp;
