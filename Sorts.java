@@ -44,12 +44,32 @@ public class Sorts {
     }
   }
 
+  public static void insertionSort(int [] ary) {
+    int temp;
+    boolean placed;
+    for (int i = 1; i < ary.length; i++) {
+      if (ary[i] < ary[i-1]) {
+        temp = ary[i];
+        for (int j = i-1; j < ary.length && !placed; j++) {
+          if (ary[j] > temp) {
+            ary[j + 1] = ary[j]
+          }
+          else {
+            ary[j] = temp;
+            placed = true;
+          }
+        }
+      }
+    }
+  }
+
   public static void main(String[] args) {
     int[] ary1 =  {7, 5, 4, 2};
     int[] ary2 = {5,1,12,-5,16,2,12,14};
     int[] ary3 = {5,1,12,-5,16};
     int[] ary4 = {2,3,4,5,1};
     int[] ary5 = {6,1,2,3,4,5};
+    int[] ary6 = {4,3,2,10,12,1,5,6};
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionSort(ary1);
@@ -66,6 +86,7 @@ public class Sorts {
     System.out.println("This is your original: " + Arrays.toString(ary5));
     bubbleSort(ary5);
     System.out.println("Bubble Sorted: " + Arrays.toString(ary5));
+    System.out.println("")
 
   }
 }
