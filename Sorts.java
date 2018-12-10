@@ -46,13 +46,13 @@ public class Sorts {
 
   public static void insertionSort(int [] ary) {
     int temp;
-    boolean placed;
+    boolean placed = false;
     for (int i = 1; i < ary.length; i++) {
       if (ary[i] < ary[i-1]) {
         temp = ary[i];
         for (int j = i-1; j < ary.length && !placed; j++) {
           if (ary[j] > temp) {
-            ary[j + 1] = ary[j]
+            ary[j + 1] = ary[j];
           }
           else {
             ary[j] = temp;
@@ -86,7 +86,9 @@ public class Sorts {
     System.out.println("This is your original: " + Arrays.toString(ary5));
     bubbleSort(ary5);
     System.out.println("Bubble Sorted: " + Arrays.toString(ary5));
-    System.out.println("")
+    System.out.println("This is your orignal: " + Arrays.toString(ary6));
+    insertionSort(ary6);
+        System.out.println("Insertion Sorted: " + Arrays.toString(ary6));
 
   }
 }
