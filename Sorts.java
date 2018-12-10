@@ -5,19 +5,19 @@ import java.io.*;
   *@param data  the elements to be sorted.
   */
 public class Sorts {
-  public static void selectionSort(int [] ary) {
+  public static void selectionSort(int [] data) {
     int least,temp;
     //advised by others that I should not use Math.min :/
-    for (int i = 0; i < ary.length; i++) {
+    for (int i = 0; i < data.length; i++) {
       least = i;
-      for (int j = i; j < ary.length; j++) {
+      for (int j = i; j < data.length; j++) {
         //this is how we ignore previously sorted
-        if (ary[j] < ary[least]) least = j;
+        if (data[j] < data[least]) least = j;
       }
     //swapping the vals into place -- technically could be a helper like Mr.K's demo
-    temp = ary[least];
-    ary[least] = ary[i];
-    ary[i] = temp;
+    temp = data[least];
+    data[least] = data[i];
+    data[i] = temp;
     //System.out.println(Arrays.toString(ary));
   }
 }
@@ -25,17 +25,17 @@ public class Sorts {
 *Upon completion, the elements of the array will be in increasing order.
 *@param data  the elements to be sorted.
 */
-  public static void bubbleSort(int [] ary) {
+  public static void bubbleSort(int [] data) {
     int least, temp;
-    for (int i = 0; i < ary.length; i++) {
-      int end = ary.length -1;
+    for (int i = 0; i < data.length; i++) {
+      int end = data.length -1;
       least = i;
       for (int j = 0; j < end; j++) {
-        if (ary[j] > ary[least]) {
+        if (data[j] > data[least]) {
           //swaqpping two vals
-          temp = ary[j];
-          ary[j] = ary[least];
-          ary[least] = temp;
+          temp = data[j];
+          data[j] = data[least];
+          data[least] = temp;
           //considering if I should just make a swap method
         }
       }
@@ -43,24 +43,30 @@ public class Sorts {
       //we know the last value will be the largest so we don't need to iterate to it again
     }
   }
-
-  public static void insertionSort(int [] ary) {
+  /**Insertion sort of an int array.
+  *Upon completion, the elements of the array will be in increasing order.
+  *@param data the elements to be sorted.
+  */
+  public static void insertionSort(int [] data) {
     int temp, curr;
-    for (int i = 1; i < ary.length; i++){
-     if (ary[i] < ary[i - 1]){
-       temp = ary[i];
+    for (int i = 1; i < data.length; i++){
+     if (data[i] < data[i - 1]){
+       temp = data[i];
        curr = i - 1;
+       //the element directly preceding the one that needs to be sorted.
        boolean placed = false;
        while (!placed){
-         if (curr < 0 || ary[curr] < temp){
-           ary[curr + 1] = temp;
+         if (curr < 0 || data[curr] < temp){
+           data[curr + 1] = temp;
            placed = true;
+           //dropping in place based on increasing order
          }
          else{
-           ary[curr + 1] = ary[curr];
+           data[curr + 1] = data[curr];
+           //the shift right
            curr--;
          }
-       System.out.println(Arrays.toString(ary));
+       //System.out.println(Arrays.toString(ary));
        }
      }
    }
@@ -91,7 +97,7 @@ public class Sorts {
     System.out.println("Bubble Sorted: " + Arrays.toString(ary5));
     System.out.println("This is your orignal: " + Arrays.toString(ary6));
     insertionSort(ary6);
-        System.out.println("Insertion Sorted: " + Arrays.toString(ary6));
+    System.out.println("Insertion Sorted: " + Arrays.toString(ary6));
 
   }
 }
