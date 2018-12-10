@@ -47,12 +47,12 @@ public class Sorts {
   public static void insertionSort(int [] ary) {
     int temp;
     boolean placed = false;
-    for (int i = 1; i < ary.length; i++) {
-      if (ary[i] < ary[i-1]) {
-        temp = ary[i];
-        for (int j = i-1; j < ary.length && !placed; j++) {
+    for (int i = 0; i < ary.length+1; i++) {
+      if (ary[i+1] < ary[i]) {
+        temp = ary[i+1];
+        for (int j = i; j < ary.length && !placed; j++) {
           if (ary[j] > temp) {
-            ary[j + 1] = ary[j];
+            ary[j+1] = ary[j];
           }
           else {
             ary[j] = temp;
