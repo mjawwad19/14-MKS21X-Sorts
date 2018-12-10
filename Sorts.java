@@ -45,23 +45,26 @@ public class Sorts {
   }
 
   public static void insertionSort(int [] ary) {
-    int temp;
+    int temp,curr;
     boolean placed = false;
-    for (int i = 0; i < ary.length+1; i++) {
-      if (ary[i+1] < ary[i]) {
-        temp = ary[i+1];
-        for (int j = i; j < ary.length && !placed; j++) {
-          if (ary[j] > temp) {
-            ary[j+1] = ary[j];
+    for (int i = 1; i < ary.length+1; i++) {
+      if (ary[i] < ary[i -1]) {
+        temp = ary[i];
+        curr = i -1;
+        while (!placed) {
+          if (ary[curr] < temp) {
+            ary[curr+1] = temp;
+            placed = true;
           }
           else {
-            ary[j] = temp;
-            placed = true;
+            ary[curr+1] = ary[curr];
+            curr--;
+          }
+          System.out.println(Arrays.toString(ary));
+        }
           }
         }
       }
-    }
-  }
 
   public static void main(String[] args) {
     int[] ary1 =  {7, 5, 4, 2};
