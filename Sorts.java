@@ -1,9 +1,11 @@
 import java.util.*;
 import java.io.*;
+
 /**Selection sort of an int array.
   *Upon completion, the elements of the array will be in increasing order.
   *@param data  the elements to be sorted.
   */
+
 public class Sorts {
   public static void selectionSort(int [] data) {
     int least,temp;
@@ -27,21 +29,23 @@ public class Sorts {
 */
   public static void bubbleSort(int [] data) {
     int least, temp;
-    boolean sorted = false;
-    for (int i = 0; i < data.length && !sorted; i++) {
+    boolean madeSwaps;;
+    for (int i = 0; i < data.length; i++) {
       int end = data.length -1;
       least = i;
+      madeSwaps = false;
         for (int j = 0; j < end; j++) {
           if (data[j] > data[least]) {
             //swaqpping two vals
             temp = data[j];
             data[j] = data[least];
             data[least] = temp;
+            madeSwaps = true;
             //considering if I should just make a swap method
           }
         }
         end--;
-        sorted = true;
+        if (!madeSwaps) return;
         //we know the last value will be the largest so we don't need to iterate to it again
       }
     }
@@ -81,7 +85,8 @@ public class Sorts {
     int[] ary4 = {2,3,4,5,1};
     int[] ary5 = {6,1,2,3,4,5};
     int[] ary6 = {4,3,2,10,12,1,5,6};
-    /*System.out.println("This is your original: " + Arrays.toString(ary1));
+    int[] mill = new int[1000000];
+    System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionSort(ary1);
     System.out.println("Selection Sorted: " + Arrays.toString(ary1));
@@ -100,8 +105,8 @@ public class Sorts {
     System.out.println("This is your orignal: " + Arrays.toString(ary6));
     insertionSort(ary6);
     System.out.println("Insertion Sorted: " + Arrays.toString(ary6));
-   */
-   int[] mill = new int[1000000];
-   bubbleSort(mill);
+    bubbleSort(mill);
+    selectionSort(ary7);
+    System.out.println("Selection Sorted: " + Arrays.toString(ary7));
   }
 }
