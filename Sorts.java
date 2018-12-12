@@ -50,7 +50,7 @@ public class Sorts {
           }
         }
         if (!madeSwaps) return;
-        System.out.println(Arrays.toString(data));
+        //System.out.println(Arrays.toString(data));
         //we know the last value will be the largest so we don't need to iterate to it again
       }
     }
@@ -60,6 +60,7 @@ public class Sorts {
   */
   public static void insertionSort(int [] data) {
     int temp, curr;
+    if (isSorted(data)) return;
     for (int i = 1; i < data.length; i++){
      if (data[i] < data[i - 1]){
        temp = data[i];
@@ -83,7 +84,7 @@ public class Sorts {
    }
  }
 
-  public static void main(String[] args) {
+/*  public static void main(String[] args) {
     int[] ary1 =  {7, 5, 4, 2};
     int[] ary2 = {5,1,12,-5,16,2,12,14};
     int[] ary3 = {5,1,12,-5,16};
@@ -91,7 +92,7 @@ public class Sorts {
     int[] ary5 = {6,1,2,3,4,5};
     int[] ary6 = {4,3,2,10,12,1,5,6};
     int[] mill = new int[1000000];
-    int[] ary7 = {2,3,4,5,6};
+    //int[] ary7 = {2,3,4,5,6};
     System.out.println("This is your original: " + Arrays.toString(ary1));
     //I'm just too lazy to copy over toString AGAIN
     selectionSort(ary1);
@@ -112,7 +113,9 @@ public class Sorts {
     insertionSort(ary6);
     System.out.println("Insertion Sorted: " + Arrays.toString(ary6)+'\n');
     bubbleSort(mill);
-    selectionSort(ary7);
-    System.out.println("Selection Sorted: " + Arrays.toString(ary7)+'\n');
-  }
+    //selectionSort(mill);
+    //insertionSort(mill);
+    //selectionSort(ary7);
+    //System.out.println("Selection Sorted: " + Arrays.toString(ary7)+'\n');
+  }*/
 }
