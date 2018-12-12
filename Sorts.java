@@ -1,19 +1,18 @@
 import java.util.*;
 import java.io.*;
 
+public class Sorts {
+  //helper to check if sorted or not and not waste time
+  private static boolean isSorted(int[] data) {
+    for (int i = 0; i < data.length -1; i++) {
+      if (data[i] > data[i+1]) return false;
+    }
+    return true;
+  }
 /**Selection sort of an int array.
   *Upon completion, the elements of the array will be in increasing order.
   *@param data  the elements to be sorted.
   */
-
-public class Sorts {
-  //helper to check if sorted or not and not waste time
-private static boolean isSorted(int[] data) {
-  for (int i = 0; i < data.length -1; i++) {
-    if (data[i] > data[i+1]) return false;
-  }
-  return true;
-}
   public static void selectionSort(int [] data) {
     int least,temp;
     if (isSorted(data)) return;
@@ -35,24 +34,23 @@ private static boolean isSorted(int[] data) {
 *@param data  the elements to be sorted.
 */
   public static void bubbleSort(int [] data) {
-    int least, temp;
+    int temp;
     boolean madeSwaps;
-    for (int i = 0; i < data.length; i++) {
-      int end = data.length -1;
-      least = i;
+    for (int end = data.length-1; end >= 0; end--) {
       madeSwaps = false;
         for (int j = 0; j < end; j++) {
-          if (data[j] > data[least]) {
+          if (data[j+1] < data[j]) {
+            //check if the previous is greater than the one immediately next
             //swaqpping two vals
             temp = data[j];
-            data[j] = data[least];
-            data[least] = temp;
+            data[j] = data[j+1];
+            data[j+1] = temp;
             madeSwaps = true;
             //considering if I should just make a swap method
           }
         }
-        end--;
         if (!madeSwaps) return;
+        System.out.println(Arrays.toString(data));
         //we know the last value will be the largest so we don't need to iterate to it again
       }
     }
